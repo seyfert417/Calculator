@@ -59,9 +59,15 @@ int main(){
             return 1;
         }
         calculator_calculate(operand1, operation, operand2);
+    do{  
         printf("\nDo you want to continue with another calculation? (Y/N): ");
         scanf(" %c", &choice);
-    } while (choice == 'Y' || choice == 'y');
+        if (choice != 'Y' && choice != 'y' && choice != 'N' && choice != 'n') {
+              printf("Invalid input! Please press 'Y' to continue or 'N' to exit.\n");
+     }
+       } while (choice != 'Y' && choice != 'y' && choice != 'N' && choice != 'n');
+        
+      } while (choice == 'Y' || choice == 'y');
 
     printf("Calculator program finished.\n");
     return 0;
